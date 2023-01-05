@@ -91,6 +91,15 @@ files:
     if __name__ == '__main__':
         AnalyzerTest("analyzer.code_analyzer").run_tests()
   learner_created: false
-feedback_link: https://hyperskill.org/projects/112/stages/609/implement#comment
-status: Unchecked
-record: -1
+- name: analyzer/linters.py
+  visible: true
+  learner_created: true
+- name: analyzer/linter_task.py
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/9903#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 02 Jan 2023 22:26:21 UTC"
+record: 1
