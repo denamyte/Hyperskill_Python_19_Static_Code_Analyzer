@@ -16,10 +16,11 @@ class LinterTask(LinterBase):
 
 @dataclass
 class LinterError(LinterBase):
+    file_name: str
     line_number: int
 
     def __str__(self):
-        return f'Line {self.line_number}: {self.code} {self.message}'
+        return f'{self.file_name}: Line {self.line_number}: {self.code} {self.message}'
 
 
 LINTER_TASKS = [
