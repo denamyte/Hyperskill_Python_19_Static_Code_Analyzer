@@ -361,5 +361,8 @@ files:
     LINTER_TASKS = [LinterTask('S001', 'Too long', too_long_linter)]
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/9904#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 06 Jan 2023 12:33:46 UTC"
+record: 2

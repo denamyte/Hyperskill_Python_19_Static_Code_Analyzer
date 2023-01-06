@@ -1,3 +1,4 @@
+from operator import attrgetter
 from typing import List
 
 from linter_task import LinterError, LINTER_TASKS
@@ -10,10 +11,10 @@ def main():
         text = f.readlines()
     for task in LINTER_TASKS:
         errors.extend(LinterError(task.code, task.message, n)
-                      for n in task.func(text))
-    # todo maybe sort by line (in the future)
+                      for n in task.exec(text))
 
     if errors:
+        errors.sort(key=attrgetter('line_number', 'code'))
         print(*errors, sep='\n')
 
 
