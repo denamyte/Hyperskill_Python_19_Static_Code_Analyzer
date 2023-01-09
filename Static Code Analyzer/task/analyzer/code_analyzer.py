@@ -3,7 +3,7 @@ import sys
 from operator import attrgetter
 from typing import List, Iterable
 
-from linter_task import LinterError, LINTER_TASKS
+from linters import LinterError, Linters
 
 
 def main():
@@ -12,9 +12,7 @@ def main():
     for name in names:
         with open(name, 'r') as f:
             text = f.readlines()
-        for task in LINTER_TASKS:
-            errors.extend(LinterError(task.code, task.message, name, n)
-                          for n in task.exec(text))
+        errors.extend(Linters.examine_text(text, name))
 
     if errors:
         errors.sort(key=attrgetter('file_name', 'line_number', 'code'))
